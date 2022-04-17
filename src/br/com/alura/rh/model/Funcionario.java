@@ -8,9 +8,8 @@ public class Funcionario {
     private DadosPessoais dadosPessoais;
     private LocalDate dataUltimoReajuste;
 
-    public Funcionario(DadosPessoais dadosPessoais, LocalDate dataUltimoReajuste) {
-        this.dadosPessoais = dadosPessoais;
-        this.dataUltimoReajuste = dataUltimoReajuste;
+    public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
+        this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario);
     }
 
     public void atualizarSalario(BigDecimal novoSalario) {
@@ -22,19 +21,24 @@ public class Funcionario {
         this.dadosPessoais.setCargo(novoCargo);
     }
 
-    public DadosPessoais getDadosPessoais() {
-        return dadosPessoais;
+    public String getNome() {
+        return dadosPessoais.getNome();
     }
 
-    public void setDadosPessoais(DadosPessoais dadosPessoais) {
-        this.dadosPessoais = dadosPessoais;
+    public String getCpf() {
+        return dadosPessoais.getCpf();
+    }
+
+    public Cargo getCargo() {
+        return dadosPessoais.getCargo();
+    }
+
+    public BigDecimal getSalario() {
+        return dadosPessoais.getSalario();
     }
 
     public LocalDate getDataUltimoReajuste() {
         return dataUltimoReajuste;
     }
 
-    public void setDataUltimoReajuste(LocalDate dataUltimoReajuste) {
-        this.dataUltimoReajuste = dataUltimoReajuste;
-    }
 }
