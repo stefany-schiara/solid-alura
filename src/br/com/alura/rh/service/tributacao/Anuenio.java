@@ -7,6 +7,7 @@ public class Anuenio implements Reajuste {
 
     private BigDecimal valor;
     private LocalDate data;
+    private Integer testeParaEste;
 
     public Anuenio(BigDecimal valor, LocalDate data) {
         this.valor = valor;
@@ -22,4 +23,5 @@ public class Anuenio implements Reajuste {
     public LocalDate data() {
         return data;
     }
+
 }
